@@ -1,0 +1,258 @@
+<%- include('includes/header') %>
+<!-- Khuyen Mai Trang Chu CSS -->
+<style>
+  .khuyen-mai {
+    height: 254px;
+    background: url(/images/khuyenMai/km-banner.png);
+    background-size: contain;
+    position: relative;
+  }
+
+  .khuyen-mai-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Added to allow items to wrap */
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    width: 100%;
+    /* Ensure it spans the full width */
+  }
+
+  .khuyen-mai-list .item {
+    width: 25%;
+    box-sizing: border-box;
+    /* Ensures padding and borders are included in the width */
+  }
+
+  .khuyen-mai-list .item img {
+    width: 100%;
+    cursor: pointer;
+  }
+</style>
+
+<!-- HOT GAME TRANG CHU -->
+<style>
+  .hot-game {
+    background: url(/images/hotGame/hotGame-banner-2.png);
+    height: 700px;
+    overflow: hidden;
+    background-size: cover;
+    position: relative;
+  }
+
+  .hot-game-list {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 22px;
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 62%
+  }
+
+  .hot-game-list img {
+    cursor: pointer;
+    max-width: 100%;
+    max-height: 100%;
+  }
+</style>
+
+  <!-- TOP FOOTER -->
+  <style>
+    .top-footer {
+      background: linear-gradient(to top, #332105, #271800);
+      height: 250px
+    }
+
+    .top-footer-list {
+      display: flex;
+      margin: auto;
+      height: 100%;
+      width: 80%;
+      align-items: center
+    }
+
+    .top-footer-list div {
+      width: 25%;
+      padding: 5px
+    }
+
+    .top-footer-list div img {
+      width: 100%;
+    }
+  </style>
+
+<div ng-class="$ctrl.styles.content" class="BDw45cKhOY5X-HJyc5_2C _13SSqi-CXmhSukDpitbsQ2">
+  <div ng-class="$ctrl.styles.wrapper" class="_1h0fCbtWimc44r9dNSenvs Fyjjbbtu7ez2tp4P1u_9X">
+    <!-- uiView: -->
+    <ui-view class="ng-scope">
+      <gupw-home class="ng-scope ng-isolate-scope">
+        <gupw-slide-banner class="ng-isolate-scope">
+          <!-- ngIf: $ctrl.loaded -->
+          <section ng-class="$ctrl.styles.wrapper" class="ng-scope DQFgka5Xh4HQIYXhzIIT1">
+
+            <!-- Cach truyen slide dong -->
+            <!-- <div ng-class="$ctrl.styles.slide" class="swiper mySwiperBanner swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-57589196c97db227">
+                <% dataPage.session.siteConfig.site_banner.forEach((item)=> { %>
+                <div class="swiper-slide" role="group" aria-label="1 / 5" style="width: 1394px;">
+                  <a href="javascript:window.location='<%= item.permalink %>';">
+                    <img data-src="<%= item.image_url %>" class="slide-img ls-is-cached lazyloaded" style="cursor: pointer;width: 100%;" src="<%= item.image_url %>">
+                  </a>
+                </div>
+                <% }); %>
+              </div>
+            </div> -->
+
+            <div ng-class="$ctrl.styles.slide" class="swiper mySwiperBanner swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+              <div class="swiper-wrapper" id="swiper-wrapper-57589196c97db227">
+                <% 
+                  const images = [
+                    { url: '/images/banner-slide/1.png', link: '/account/deposit' },
+                    { url: '/images/banner-slide/2.png', link: '/account/deposit' },
+                    { url: '/images/banner-slide/3.png', link: '/account/deposit' }
+                  ];
+                  images.forEach((item, index) => { %>
+                <div class="swiper-slide" role="group" style="width: 1394px;">
+                  <a href="javascript:window.location='<%= item.link %>';">
+                    <img src="<%= item.url %>" class="slide-img ls-is-cached lazyloaded" style="cursor: pointer;width: 100%;">
+                  </a>
+                </div>
+                <% }); %>
+              </div>
+            </div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+  </div>
+  </section><!-- end ngIf: $ctrl.loaded -->
+  </gupw-slide-banner>
+  <gupw-hot-news class="ng-isolate-scope">
+    <!-- ngIf: $ctrl.newsVisible -->
+    <div ng-class="$ctrl.styles.wrapper" ng-if="$ctrl.newsVisible" class="ng-scope Hra33TxtHu1C-vZkxSDi7">
+      <div ng-class="$ctrl.styles.layer" class="_2f-DvVLvelwJOC7_a45SIc">
+        <span ng-class="$ctrl.styles.title" translate="Shared_NewsInfo" class="ng-scope _1HKJOEgSu0SSPbgkWjI0rQ">Tin tức mới nhất
+          :</span>
+        <div ng-class="$ctrl.styles['hot-news']" class="W9N3001mLDTkKCM5ar8j9">
+          <div marquee="" style="display: block;">
+            <div style="width: 100000px; transform: translateX(1030px); animation: 226.335s linear 0s infinite normal none running marqueeAnimation-8325873;" class="js-marquee-wrapper">
+              <div class="js-marquee" style="margin-right: 0px; float: left;">
+                <ul ng-class="$ctrl.styles['news-list']" class="_3O7S0w3esoWg5PVs5ZLUi2">
+                  <!-- ngRepeat: item in $ctrl.list -->
+                  <li ng-repeat="item in $ctrl.list" ng-click="$ctrl.go(item)" class="ng-binding ng-scope">
+                    <%=dataPage.session.siteConfig.site_brand_marquee;%>
+                  </li>
+                  <!-- end ngRepeat: item in $ctrl.list -->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <ng-transclude></ng-transclude>
+        </div>
+      </div>
+    </div>
+  </gupw-hot-news>
+
+  <!-- KHUYEN MAI -->
+
+  <section class="khuyen-mai">
+    <div class="khuyen-mai-list">
+      <div class="item">
+        <a onclick="window.location='/Promotion'">
+          <img src="/images/khuyenMai/km-item-1.png" alt="km-item-1.png">
+        </a>
+      </div>
+      <div class="item">
+        <a onclick="window.location='/Promotion'">
+          <img src="/images/khuyenMai/km-item-2.png" alt="km-item-2.png">
+        </a>
+      </div>
+      <div class="item">
+        <a onclick="window.location='/Promotion'">
+          <img src="/images/khuyenMai/km-item-3.png" alt="km-item-3.png">
+        </a>
+      </div>
+      <div class="item">
+        <a onclick="window.location='/Promotion'">
+          <img src="/images/khuyenMai/km-item-4.png" alt="km-item-4.png">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOT GAME -->
+
+  <section class="hot-game">
+    <div class="hot-game-list">
+      <div class="item-2fr">
+        <a onclick="window.location='/Lobby/Live'">
+          <img src="/images/hotGame/hotGame-1.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/Live'">
+          <img src="/images/hotGame/hotGame-3.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/Fish'">
+          <img src="/images/hotGame/hotGame-4.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/Game'">
+          <img src="/images/hotGame/hotGame-5.png" alt="">
+        </a>
+      </div>
+      <div class="item-2fr">
+        <a onclick="window.location='/Lobby/Sport'">
+          <img src="/images/hotGame/hotGame-2.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/CockFighting'">
+          <img src="/images/hotGame/hotGame-6.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/Board'">
+          <img src="/images/hotGame/hotGame-7.png" alt="">
+        </a>
+      </div>
+      <div>
+        <a onclick="window.location='/Lobby/Lottery'">
+          <img src="/images/hotGame/hotGame-8.png" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOP FOOTER-->
+  <section class="top-footer">
+    <div class="top-footer-list">
+      <div>
+        <img src="/images/topFooter/topFooter-1.png" alt="">
+      </div>
+      <div>
+        <img src="/images/topFooter/topFooter-2.png" alt="">
+      </div>
+      <div>
+        <img src="/images/topFooter/topFooter-3.png" alt="">
+      </div>
+      <div>
+        <img src="/images/topFooter/topFooter-4.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  </gupw-home>
+  </ui-view>
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script src="/core/js/lobby/homepage.js"></script>
+
+<%- include('includes/footer') %>
