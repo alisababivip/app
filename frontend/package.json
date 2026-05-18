@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "antd": "^5.17.0",
-    "axios": "^1.6.8",
+    "axios": "^1.15.2",
     "bootstrap": "^5.3.3",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.11",
